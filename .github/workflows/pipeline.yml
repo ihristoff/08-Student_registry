@@ -27,4 +27,11 @@ jobs:
     - name: Run Tests
       run: npm test
 
+    - name: Deploy to Render
+      uses: bankfliptech/deploy-to-render@v1
+      with:
+        serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+        apiKey: ${{ secrets.RENDER_API_KEY }}
+
+
 
