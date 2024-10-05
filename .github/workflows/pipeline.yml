@@ -27,11 +27,15 @@ jobs:
     - name: Run Tests
       run: npm test
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy to Render
-      uses: bankfliptech/deploy-to-render@v1
+    - uses: actions/checkout@v3
+    - uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
       with:
         serviceId: ${{ secrets.RENDER_SERVICE_ID }}
         apiKey: ${{ secrets.RENDER_API_KEY }}
-
 
 
