@@ -32,8 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to Render
-    - uses: actions/checkout@v3
-    - uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
+      uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
       with:
         serviceId: ${{ secrets.RENDER_SERVICE_ID }}
         apiKey: ${{ secrets.RENDER_API_KEY }}
